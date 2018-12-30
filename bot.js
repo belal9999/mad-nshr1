@@ -1,35 +1,63 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-client.on('ready', () => {
-  console.log(`Logged in as ${client.user.tag}!`);
-});
+
+console.log("Welcome Again !");
+ 
+ client.on("guildMemberRemove", member => {
+  member.createDM().then(function (channel) {
+  return channel.send(` 
+**
+:kissing::heart::eyes: حيااكْ الله  فى سيرفرنا 
+╔╦╦╦═╦╗╔═╦═╦══╦═╗
+║║║║╩╣╚╣═╣║║║║║╩╣
+╚══╩═╩═╩═╩═╩╩╩╩═╝ 
+
+‏نقدم لك دعوة لسموك الراقيَ .
+‏لنحظى بجمال حضورك وتواجدك
+•بتنـورونـا الجميع :wink:
+•اي مشكله توآجهك ولا يهمك. عندك الاداره تفضل ونحل مشكلتك مع آي شخص بالسيرفر.:telephone_receiver:
+•عندك فكره موضوع تفضل شآركنا فيه:jack_o_lantern::gift:
+•واخيرا حييييياكم واكيد وجودكم هو اللي بيدعمنا وراح نكون الافضل.
+شرفنا يا عسل:wink: :kissing_heart:
+
+https://discord.gg/GkwWhJt
+joined info-MaD
+! MaD.                              
+الدعووة خاصة لك ي قلبي ... [ ${member}  ]
+**`)
+}).catch(console.error)
+
+})
+ 
+client.on("guildMemberAdd", member => {
+  member.createDM().then(function (channel) {
+  return channel.send(` 
+**
+:kissing::heart::eyes: حيااكْ الله  فى سيرفرنا 
+╔╦╦╦═╦╗╔═╦═╦══╦═╗
+║║║║╩╣╚╣═╣║║║║║╩╣
+╚══╩═╩═╩═╩═╩╩╩╩═╝ 
+
+‏نقدم لك دعوة لسموك الراقيَ .
+‏لنحظى بجمال حضورك وتواجدك
+•بتنـورونـا الجميع :wink:
+•اي مشكله توآجهك ولا يهمك. عندك الاداره تفضل ونحل مشكلتك مع آي شخص بالسيرفر.:telephone_receiver:
+•عندك فكره موضوع تفضل شآركنا فيه:jack_o_lantern::gift:
+•واخيرا حييييياكم واكيد وجودكم هو اللي بيدعمنا وراح نكون الافضل.
+شرفنا يا عسل:wink: :kissing_heart:
 
 
-const developers = ["295210953384132618"]
-const adminprefix = "^";
-client.on('message', message => {
-    var argresult = message.content.split(` `).slice(1).join(' ');
-      if (!developers.includes(message.author.id)) return;
-      
-  if (message.content.startsWith(adminprefix + 'ply')) {
-    client.user.setGame(argresult);
-      message.channel.send(`**Status You   ${argresult}**`)
-  } else 
-  if (message.content.startsWith(adminprefix + 'wat')) {
-  client.user.setActivity(argresult, {type:'WATCHING'});
-      message.channel.send(`**Status You   ${argresult}**`)
-  } else 
-  if (message.content.startsWith(adminprefix + 'lis')) {
-  client.user.setActivity(argresult , {type:'LISTENING'});
-      message.channel.send(`**Status You  ${argresult}**`)
-  } else 
-  if (message.content.startsWith(adminprefix + 'st')) {
-    client.user.setGame(argresult, "https://www.twitch.tv/M3roof");
-      message.channel.send(`**Status You ${argresult} **`)
-}
-});
+https://discord.gg/GkwWhJt
+joined info-MaD
+! MaD.                              
+الدعووة خاصة لك ي قلبي ... [ ${member}  ]
+**`) 
+}).catch(console.error)
+})
 
 
 
 
+
+// THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN);
